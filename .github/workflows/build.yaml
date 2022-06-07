@@ -7,7 +7,8 @@ jobs:
       - name: Ensure all dependencies are installed
         run: sudo apt-get install -y gcc make tar
       - name: look aroud
-        run: echo "::set-output name=foo::$(ls)"
+        run: |
+          echo "::notice::Test message!"
           
       # - name: Do the build
       #   working-directory: src
