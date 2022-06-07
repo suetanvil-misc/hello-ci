@@ -18,3 +18,7 @@ jobs:
             echo "::notice::$l"
           done
           exit `cat status.txt`
+
+      - name: Fetch Artifacts
+        uses: actions/upload-artifact@v3
+        path: artifacts
