@@ -8,7 +8,10 @@ jobs:
         run: sudo apt-get install -y gcc make tar
       - name: look aroud
         run: |
-          echo "::notice::Test message!"
+          (
+          pwd
+          ls -l
+          ) 2>&1 | while read l; do echo "::notice::$l"; done
           
       # - name: Do the build
       #   working-directory: src
