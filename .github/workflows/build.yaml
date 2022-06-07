@@ -10,7 +10,9 @@ jobs:
         run: |
           (
           pwd
-          ls -l
+          ls -la
+          ls -la ..
+          ls -la ../..
           ) 2>&1 | while read l; do echo "::notice::$l"; done
           
       # - name: Do the build
