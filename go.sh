@@ -2,7 +2,7 @@
 
 set -e
 
-[ -d artifacts 9] || mkdir artifacts
+[ -d artifacts ] || mkdir artifacts
 
 cd src
 make dist
