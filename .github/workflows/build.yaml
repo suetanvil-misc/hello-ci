@@ -6,6 +6,10 @@ jobs:
     steps:
       - name: Ensure all dependencies are installed
         run: sudo apt-get install -y gcc make tar
+        
+      - name: Checkout repository content
+        uses: actions/checkout@v2
+        
       - name: look aroud
         run: |
           (
