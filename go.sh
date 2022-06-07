@@ -3,8 +3,9 @@
 set -e
 
 echo "Go!"
+echo "this is a message"
 echo "pwd=`pwd`"
 
-echo ls:
-ls -l
+echo "success!"
+exit 0
 

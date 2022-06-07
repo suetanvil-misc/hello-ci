@@ -4,13 +4,10 @@ jobs:
   build_hello:
     runs-on: ubuntu-18.04
     steps:
-      - name: Ensure all dependencies are installed
-        run: sudo apt-get install -y gcc make tar
-        
       - name: Checkout repository content
         uses: actions/checkout@v2
         
-      - name: look aroud
+      - name: Do the thing
         run: 
           (
           bash go.sh
