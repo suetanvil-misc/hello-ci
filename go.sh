@@ -8,6 +8,6 @@ cd src
 make dist
 cp *.tar.gz ../artifacts
 
-exit 0
+exit 1  # fail!
 
 
