@@ -4,6 +4,12 @@ jobs:
   build_hello:
     runs-on: ubuntu-18.04
     steps:
+
+      # These are only deps needed for script below; go.sh will handle
+      # the rest.
+      - name: Install initial dependencies
+        run: sudo apt-get install -y coreutils
+      
       - name: Checkout repository content
         uses: actions/checkout@v2
         
@@ -13,10 +19,14 @@ jobs:
           (
           bash go.sh
           echo "$?" > status.txt
-          ) 2>&1 | tee artifacts/build.log | \
+
+          echo "Checksums:"
+          sha256sum artifacts/*
+          ) 2>&1 | tee build.log | \
           while read l; do
             echo "::notice::$l"
           done
+          cp build.log artifacts/
           exit `cat status.txt`
 
       - name: Fetch Artifacts
