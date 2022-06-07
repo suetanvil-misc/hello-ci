@@ -1,5 +1,9 @@
-name: GitHub Actions Demo
+name: Run go.sh
+
+# Run only if invoked explicitly
 on: workflow_dispatch
+
+# The job:
 jobs:
   build_hello:
     runs-on: ubuntu-18.04

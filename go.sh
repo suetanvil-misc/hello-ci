@@ -2,12 +2,12 @@
 
 set -e
 
-[ -d artifacts ] || mkdir artifacts
+[ -d artifacts 9] || mkdir artifacts
 
 cd src
 make dist
 cp *.tar.gz ../artifacts
 
-exit 1  # fail!
+exit 0
 
 
