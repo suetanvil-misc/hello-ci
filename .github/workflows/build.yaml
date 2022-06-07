@@ -6,7 +6,12 @@ jobs:
     steps:
       - name: Ensure all dependencies are installed
         run: sudo apt-get install -y gcc make tar
-      - name: Do the build
-        working-directory: src
+      - name: look aroud
         run: |
-          make dist
+          echo "pwd=`pwd`"
+          ls
+          
+      # - name: Do the build
+      #   working-directory: src
+      #   run: |
+      #     make dist
