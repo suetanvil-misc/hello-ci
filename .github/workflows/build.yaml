@@ -7,9 +7,7 @@ jobs:
       - name: Ensure all dependencies are installed
         run: sudo apt-get install -y gcc make tar
       - name: look aroud
-        run: |
-          echo "pwd=`pwd`"
-          ls
+        run: go.sh
           
       # - name: Do the build
       #   working-directory: src
