@@ -2,10 +2,12 @@
 
 set -e
 
-echo "Go!"
-echo "this is a message"
-echo "pwd=`pwd`"
+[ -d artifacts ] || mkdir artifacts
 
-echo "success!"
+cd src
+make dist
+cp *.tar.gz ../artifacts
+
 exit 0
+
 

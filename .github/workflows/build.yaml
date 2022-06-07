@@ -8,13 +8,13 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Do the thing
-        run: 
+        run:
+          mkdir artifacts
           (
           bash go.sh
           echo "$?" > status.txt
-          ) 2>&1 | while read l; do echo "::notice::$l"; done
+          ) 2>&1 | tee artifacts/build.log | \
+          while read l; do
+            echo "::notice::$l"
+          done
           exit `cat status.txt`
-      # - name: Do the build
-      #   working-directory: src
-      #   run: |
-      #     make dist
