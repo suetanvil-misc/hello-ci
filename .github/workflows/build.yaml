@@ -17,6 +17,7 @@ jobs:
         run: |
           mkdir artifacts
           (
+          echo 99 > status.txt  # initial failure
           bash go.sh
           echo "$?" > status.txt
 
